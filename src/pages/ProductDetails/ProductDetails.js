@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LoadingComponent from '../../components/LoadingComponent/LoadingComponent';
+import DETAILS_API from '../../utils/ApiData'
 
 const ProductDetails = () => {
     const [detail, setDetail] = useState([]);
@@ -9,7 +10,7 @@ const ProductDetails = () => {
 
     const param = useParams();
     useEffect(() => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${param.id}`)
+        axios.get(DETAILS_API + param.id)
             .then((res) => {
                 const data = res.data.meals[0];
                 // console.log(data);

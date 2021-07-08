@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-// import PRODUCT_API from '../utils/ApiData';
+import PRODUCT_API from '../utils/ApiData';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
 import ProductsItems from './ProductsItems/ProductsItems';
 
@@ -12,7 +12,7 @@ function ProductsComponent() {
     const params = useParams();
 
     useEffect(() => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.menu}`)
+        axios.get(PRODUCT_API + params.menu)
             .then((res) => {
                 const data = res.data.meals;
                 setProducts(data);

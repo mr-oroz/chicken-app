@@ -6,15 +6,15 @@ import LoadingComponent from '../../components/LoadingComponent/LoadingComponent
 import ButtonBasket from '../../components/Buttons/ButtonBasket';
 import CardComponent from '../../components/CardComponent/CardComponent';
 import ProductContext from '../../useContext/ProductContext';
+import MENU_API from '../../utils/ApiData';
 
 function MenuDropdownComponent() {
     const [dropdownMenu, setDropdowMenu] = useState([]);
     const [spinner, setSpiner] = useState(true);
     const Product = useContext(ProductContext);
-
     const params = useParams();
     useEffect(() => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${params.menu}`)
+        axios.get(MENU_API + params.menu)
             .then((res) => {
                 const data = res.data.meals;
                 // console.log(data)

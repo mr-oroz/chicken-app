@@ -3,6 +3,7 @@ import { Navbar, NavDropdown, Form, Button, Nav, FormControl } from 'react-boots
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import ProductContext from '../../useContext/ProductContext';
+import CATEGORIES_API from '../../utils/ApiData';
 
 const Header = () => {
     const [dropdown, setDropdown] = useState([]);
@@ -10,7 +11,7 @@ const Header = () => {
     const Product = useContext(ProductContext);
     let history = useHistory();
     useEffect(() => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
+        axios.get(CATEGORIES_API)
             .then((res) => {
                 const data = res.data.meals;
                 setDropdown(data)

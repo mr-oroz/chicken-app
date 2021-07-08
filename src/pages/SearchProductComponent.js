@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
+import SEARCH_API from '../utils/ApiData'
 
 const SearchProductComponent = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const param = useParams()
     useEffect(() => {
-        axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${param.name}`)
+        axios.get(SEARCH_API + param.name)
         .then((res) => {
             const data = res.data.meals;
             console.log(res)
