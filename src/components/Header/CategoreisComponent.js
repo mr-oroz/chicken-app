@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import LoadingComponent from '../LoadingComponent/LoadingComponent';
+import { DROPDOWN_API } from '../../utils/ApiData';
 
 const CategoriesComponent = () => {
     const [categories, setCategories] = useState([]);
     const [spinner, setSpiner] = useState(true);
-    
+
     useEffect(() => {
-        axios.get(`https://themealdb.com/api/json/v1/1/categories.php`)
+        axios.get(DROPDOWN_API)
             .then(res => {
                 const data = res.data.categories
                 // console.log(data);
@@ -43,7 +44,6 @@ const CategoriesComponent = () => {
                                                     style={{ cursor: 'pointer' }}
                                                 >({v.strCategory})</p>
                                             </Link>
-
                                         </div>
                                     )
                                 })

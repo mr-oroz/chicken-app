@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import PRODUCT_API from '../utils/ApiData';
+import {PRODUCT_API} from '../utils/ApiData';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
 import ProductsItems from './ProductsItems/ProductsItems';
 

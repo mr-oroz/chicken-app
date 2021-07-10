@@ -3,7 +3,7 @@ import { Navbar, NavDropdown, Form, Button, Nav, FormControl } from 'react-boots
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import ProductContext from '../../useContext/ProductContext';
-import CATEGORIES_API from '../../utils/ApiData';
+import {CATEGORIES_API} from '../../utils/ApiData';
 
 const Header = () => {
     const [dropdown, setDropdown] = useState([]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import LoadingComponent from '../../components/LoadingComponent/LoadingComponent';
-import DETAILS_API from '../../utils/ApiData'
+import { DETAILS_API } from '../../utils/ApiData';
 
 const ProductDetails = () => {
     const [detail, setDetail] = useState([]);
@@ -35,7 +35,7 @@ const ProductDetails = () => {
                                 transform: 'translateX(-50%)'
                             }}
                         >
-                            <h3 style={{textAlign: 'center'}}>{detail.strMeal}</h3>
+                            <h3 style={{ textAlign: 'center' }}>{detail.strMeal}</h3>
                             <p className='mt-4'
                                 style={{
                                     display: 'inline-block',

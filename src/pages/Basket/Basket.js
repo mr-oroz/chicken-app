@@ -24,6 +24,9 @@ const Basket = () => {
                                 <LoadingComponent />
                                 :
                                 <div className='d-flex'>
+                                    <div>
+                                        <button className='btn btn-success mt-4'>Order ({basket.length}) meals </button>
+                                    </div>
                                     {
                                         basket.map((basket) => {
                                             return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
-import SEARCH_API from '../utils/ApiData'
+import {SEARCH_API} from '../utils/ApiData'
 
 const SearchProductComponent = () => {
     const [data, setData] = useState([])

@@ -6,7 +6,7 @@ import LoadingComponent from '../../components/LoadingComponent/LoadingComponent
 import ButtonBasket from '../../components/Buttons/ButtonBasket';
 import CardComponent from '../../components/CardComponent/CardComponent';
 import ProductContext from '../../useContext/ProductContext';
-import MENU_API from '../../utils/ApiData';
+import { MENU_API } from '../../utils/ApiData';
 
 function MenuDropdownComponent() {
     const [dropdownMenu, setDropdowMenu] = useState([]);
