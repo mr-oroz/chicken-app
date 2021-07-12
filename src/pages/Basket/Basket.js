@@ -2,10 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import ProductContext from '../../useContext/ProductContext';
 import LoadingComponent from '../../components/LoadingComponent/LoadingComponent';
 import CardComponent from '../../components/CardComponent/CardComponent';
+import ModalBasket from '../../components/Modals/ModalBasket';
 
 const Basket = () => {
     const Product = useContext(ProductContext);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const basket = Product.product;
     useEffect(() => {
         setLoading(false)
@@ -25,8 +31,9 @@ const Basket = () => {
                                 :
                                 <div className='d-flex'>
                                     <div>
-                                        <button className='btn btn-success mt-4'>Order ({basket.length}) meals </button>
+                                        <button onClick={() => handleShow()} className='btn btn-success mt-4'>Order ({basket.length}) meals </button>
                                     </div>
+                                    <ModalBasket handleClose={() => { handleClose() }} show={show} />
                                     {
                                         basket.map((basket) => {
                                             return (
